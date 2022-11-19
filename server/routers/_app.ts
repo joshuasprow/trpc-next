@@ -1,7 +1,9 @@
 import { z } from "zod";
 import { procedure, router } from "../trpc";
+import { employeeRouter } from "./employee";
 
 export const appRouter = router({
+  employee: employeeRouter,
   hello: procedure
     .input(
       z.object({
