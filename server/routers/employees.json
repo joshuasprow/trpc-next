@@ -1,0 +1,103 @@
+[
+  { "name": "Miss Nellie Ernser", "title": "Boss", "supervisor": "" },
+  {
+    "name": "Stewart Goodwin",
+    "title": "Human Configuration Coordinator",
+    "supervisor": "Miss Nellie Ernser"
+  },
+  {
+    "name": "Rachel Hamill",
+    "title": "Dynamic Group Coordinator",
+    "supervisor": "Miss Nellie Ernser"
+  },
+  {
+    "name": "Bennie Quigley",
+    "title": "International Solutions Designer",
+    "supervisor": "Miss Nellie Ernser"
+  },
+  {
+    "name": "Lila Littel Jr.",
+    "title": "Principal Intranet Planner",
+    "supervisor": "Bennie Quigley"
+  },
+  {
+    "name": "Ms. Winston Bernhard",
+    "title": "Product Marketing Coordinator",
+    "supervisor": "Stewart Goodwin"
+  },
+  {
+    "name": "Wade Block",
+    "title": "International Configuration Supervisor",
+    "supervisor": "Ms. Winston Bernhard"
+  },
+  {
+    "name": "Eunice Schowalter",
+    "title": "Internal Division Manager",
+    "supervisor": "Rachel Hamill"
+  },
+  {
+    "name": "Dr. Ron Hagenes",
+    "title": "Regional Configuration Technician",
+    "supervisor": "Rachel Hamill"
+  },
+  {
+    "name": "Drew Marvin Jr.",
+    "title": "Direct Accountability Administrator",
+    "supervisor": "Ms. Winston Bernhard"
+  },
+  {
+    "name": "Ramiro Rau",
+    "title": "Internal Marketing Coordinator",
+    "supervisor": "Rachel Hamill"
+  },
+  {
+    "name": "Dana Runte",
+    "title": "Internal Factors Liaison",
+    "supervisor": "Drew Marvin Jr."
+  },
+  {
+    "name": "Milton Jacobson",
+    "title": "Human Tactics Agent",
+    "supervisor": "Miss Nellie Ernser"
+  },
+  {
+    "name": "Sherry Heidenreich",
+    "title": "Dynamic Configuration Specialist",
+    "supervisor": "Ramiro Rau"
+  },
+  {
+    "name": "Mrs. Carrie Lakin",
+    "title": "Legacy Solutions Assistant",
+    "supervisor": "Rachel Hamill"
+  },
+  {
+    "name": "Katie Stroman",
+    "title": "Direct Group Specialist",
+    "supervisor": "Eunice Schowalter"
+  },
+  {
+    "name": "Frankie Nikolaus",
+    "title": "National Directives Specialist",
+    "supervisor": "Ms. Winston Bernhard"
+  },
+  {
+    "name": "Melvin Feest",
+    "title": "Future Implementation Officer",
+    "supervisor": "Drew Marvin Jr."
+  },
+  {
+    "name": "Jason Zulauf",
+    "title": "Legacy Program Architect",
+    "supervisor": "Dana Runte"
+  },
+  {
+    "name": "Katie Lebsack",
+    "title": "International Directives Officer",
+    "supervisor": "Bennie Quigley"
+  },
+  {
+    "name": "Ted Weissnat",
+    "title": "Global Applications Developer",
+    "supervisor": "Jason Zulauf"
+  }
+]
