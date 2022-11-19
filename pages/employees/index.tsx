@@ -1,5 +1,6 @@
 import { NextPage } from "next";
 import Link from "next/link";
+import Title from "../../components/Title";
 import { trpc } from "../../utils/trpc";
 import styles from "../index.module.css";
 
@@ -9,7 +10,7 @@ const Employees: NextPage = () => {
   return (
     <div className={styles.container}>
       <main className={styles.main}>
-        <h1 className={styles.title}>Employees</h1>
+        <Title>Employees</Title>
 
         <p className={styles.description}>
           <Link href="/">Home</Link>

@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import Title from "../components/Title";
 import { trpc } from "../utils/trpc";
 import styles from "./index.module.css";
 
@@ -24,12 +25,12 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
+        <Title>
           Welcome to <a href="https://nextjs.org">Next.js</a>
-        </h1>
-        <h1 className={styles.title}>
+        </Title>
+        <Title>
           ... with <a href="https://trpc.io">TRPC</a>!
-        </h1>
+        </Title>
 
         <p className={styles.description}>
           <TrpcQuery />

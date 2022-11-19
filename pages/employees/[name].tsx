@@ -1,5 +1,6 @@
 import { NextPage } from "next";
 import { useRouter } from "next/router";
+import Title from "../../components/Title";
 import { trpc } from "../../utils/trpc";
 import styles from "../index.module.css";
 
@@ -10,7 +11,7 @@ const Employee: NextPage = () => {
   return (
     <div className={styles.container}>
       <main className={styles.main}>
-        <h1 className={styles.title}>Employee</h1>
+        <Title>Employee</Title>
 
         {employee.data ? (
           <ul>
