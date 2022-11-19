@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 import Link from "next/link";
-import styles from "../../styles/Home.module.css";
 import { trpc } from "../../utils/trpc";
+import styles from "../index.module.css";
 
 const Employees: NextPage = () => {
   const employees = trpc.employee.all.useQuery();

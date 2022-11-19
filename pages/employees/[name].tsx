@@ -1,7 +1,7 @@
 import { NextPage } from "next";
-import styles from "../../styles/Home.module.css";
 import { useRouter } from "next/router";
 import { trpc } from "../../utils/trpc";
+import styles from "../index.module.css";
 
 const Employee: NextPage = () => {
   const { query } = useRouter();
