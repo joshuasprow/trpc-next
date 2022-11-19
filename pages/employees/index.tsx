@@ -22,9 +22,9 @@ const Employees: NextPage = () => {
         {employees.data?.map((employee) => (
           <Card
             description={employee.title}
-            href={`/employees/${employee.name}`}
+            href={`/employees/${employee.id}`}
             title={employee.name}
-            key={employee.name}
+            key={employee.id}
           />
         ))}
       </Grid>
