@@ -1,15 +1,8 @@
-import {
-  GetServerSideProps,
-  GetStaticPaths,
-  GetStaticProps,
-  NextPage,
-} from "next";
-import { useRouter } from "next/router";
-import { z } from "zod";
+import { GetServerSideProps, NextPage } from "next";
 import Main from "../../components/Main";
 import Title from "../../components/Title";
-import { trpc } from "../../utils/trpc";
 import { Employee as EmployeeType } from "../../server/routers/employee";
+import { trpc } from "../../utils/trpc";
 
 type Props = {
   id: string;
@@ -20,17 +13,15 @@ const Employee: NextPage<Props> = ({ id }) => {
 
   return (
     <Main>
-      <Title>Employee</Title>
+      <Title>{employee.data ? employee.data.name : "Loading..."}</Title>
 
       {employee.data ? (
         <ul>
-          <li>Name: {employee.data.name}</li>
+          <li>ID: {employee.data.id}</li>
           <li>Title: {employee.data.title}</li>
           <li>Supervisor: {employee.data.supervisor}</li>
         </ul>
-      ) : (
-        "Loading..."
-      )}
+      ) : null}
     </Main>
   );
 };
@@ -43,7 +34,9 @@ export const getServerSideProps: GetServerSideProps<Props> = async ({
 
     return { props: { id } };
   } catch {
-    return { redirect: { destination: "/employees", permanent: false } };
+    return {
+      redirect: { destination: "/employees", permanent: false },
+    };
   }
 };
 
