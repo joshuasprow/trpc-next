@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import Code from "../components/Code";
 import Description from "../components/Description";
 import Main from "../components/Main";
 import Title from "../components/Title";
@@ -11,9 +12,9 @@ function TrpcQuery() {
   const hello = trpc.hello.useQuery({ text: "client" });
 
   return (
-    <code className={styles.code}>
+    <Code>
       TRPC response: {hello.data ? hello.data.greeting : "loading..."}
-    </code>
+    </Code>
   );
 }
 
