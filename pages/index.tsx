@@ -2,7 +2,7 @@ import Head from "next/head";
 import Card from "../components/Card";
 import Code from "../components/Code";
 import Description from "../components/Description";
-import Logo from "../components/Logo";
+import Footer from "../components/Footer";
 import Main from "../components/Main";
 import Title from "../components/Title";
 import { trpc } from "../utils/trpc";
@@ -68,15 +68,7 @@ export default function Home() {
         </div>
       </Main>
 
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by <Logo src="/vercel.svg" alt="Vercel Logo" />
-        </a>
-      </footer>
+      <Footer />
     </>
   );
 }
