@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import Description from "../components/Description";
 import Title from "../components/Title";
 import { trpc } from "../utils/trpc";
 import styles from "./index.module.css";
@@ -32,9 +33,9 @@ export default function Home() {
           ... with <a href="https://trpc.io">TRPC</a>!
         </Title>
 
-        <p className={styles.description}>
+        <Description>
           <TrpcQuery />
-        </p>
+        </Description>
 
         <div className={styles.grid}>
           <Link href="/employees" className={styles.card}>
