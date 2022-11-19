@@ -1,5 +1,6 @@
 import { NextPage } from "next";
 import Link from "next/link";
+import Card from "../../components/Card";
 import Description from "../../components/Description";
 import Main from "../../components/Main";
 import Title from "../../components/Title";
@@ -19,14 +20,12 @@ const Employees: NextPage = () => {
 
       <div className={styles.grid}>
         {employees.data?.map((employee) => (
-          <Link
+          <Card
+            description={employee.title}
             href={`/employees/${employee.name}`}
-            className={styles.card}
+            title={employee.name}
             key={employee.name}
-          >
-            <h2>{employee.name} &rarr;</h2>
-            <p>{employee.title}</p>
-          </Link>
+          />
         ))}
       </div>
     </Main>
