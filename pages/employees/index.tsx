@@ -2,10 +2,10 @@ import { NextPage } from "next";
 import Link from "next/link";
 import Card from "../../components/Card";
 import Description from "../../components/Description";
+import Grid from "../../components/Grid";
 import Main from "../../components/Main";
 import Title from "../../components/Title";
 import { trpc } from "../../utils/trpc";
-import styles from "../index.module.css";
 
 const Employees: NextPage = () => {
   const employees = trpc.employee.all.useQuery();
@@ -18,7 +18,7 @@ const Employees: NextPage = () => {
         <Link href="/">Home</Link>
       </Description>
 
-      <div className={styles.grid}>
+      <Grid>
         {employees.data?.map((employee) => (
           <Card
             description={employee.title}
@@ -27,7 +27,7 @@ const Employees: NextPage = () => {
             key={employee.name}
           />
         ))}
-      </div>
+      </Grid>
     </Main>
   );
 };

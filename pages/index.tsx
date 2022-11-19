@@ -3,10 +3,10 @@ import Card from "../components/Card";
 import Code from "../components/Code";
 import Description from "../components/Description";
 import Footer from "../components/Footer";
+import Grid from "../components/Grid";
 import Main from "../components/Main";
 import Title from "../components/Title";
 import { trpc } from "../utils/trpc";
-import styles from "./index.module.css";
 
 function TrpcQuery() {
   const hello = trpc.hello.useQuery({ text: "client" });
@@ -39,7 +39,7 @@ export default function Home() {
           <TrpcQuery />
         </Description>
 
-        <div className={styles.grid}>
+        <Grid>
           <Card
             description="Browse employee records fetched from the TRPC backend."
             href="/employees"
@@ -65,7 +65,7 @@ export default function Home() {
             href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
             title="Deploy"
           />
-        </div>
+        </Grid>
       </Main>
 
       <Footer />
