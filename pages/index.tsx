@@ -1,17 +1,8 @@
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "../styles/Home.module.css";
 import { trpc } from "../utils/trpc";
-
-function Employees() {
-  const employees = trpc.employee.all.useQuery();
-
-  return (
-    <code className={styles.code}>
-      Employees: {employees.data ? employees.data.length : "loading..."}
-    </code>
-  );
-}
 
 function TrpcQuery() {
   const hello = trpc.hello.useQuery({ text: "client" });
@@ -43,15 +34,12 @@ export default function Home() {
         <p className={styles.description}>
           <TrpcQuery />
         </p>
-        <p className={styles.description}>
-          <Employees />
-        </p>
 
         <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
+          <Link href="/employees" className={styles.card}>
+            <h2>Employees &rarr;</h2>
+            <p>Browse employee records fetched from the TRPC backend.</p>
+          </Link>
 
           <a href="https://nextjs.org/learn" className={styles.card}>
             <h2>Learn &rarr;</h2>
