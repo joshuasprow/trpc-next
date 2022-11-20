@@ -11,7 +11,10 @@ type Props = {
 const Card: FC<Props> = ({ description, href, title }) => {
   return (
     <Link href={href} className={styles.card}>
-      <h2>{title} &rarr;</h2>
+      <h2>
+        <span>{title}</span>
+        <span>&rarr;</span>
+      </h2>
       <p>{description}</p>
     </Link>
   );

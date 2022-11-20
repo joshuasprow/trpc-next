@@ -1,14 +1,21 @@
 .grid {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  max-width: 800px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  width: 800px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1000px) {
   .grid {
-    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 800px) {
+  .grid {
+    display: flex;
     flex-direction: column;
+    align-items: center;
+    width: 100%;
   }
 }
