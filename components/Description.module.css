@@ -1,5 +1,5 @@
 .description {
-  margin: 4rem 0;
+  margin: 1rem 0;
   line-height: 1.5;
   font-size: 1.5rem;
   text-align: center;
@@ -8,6 +8,7 @@
 .description a {
   color: #0070f3;
   text-decoration: none;
+  margin: 0 0.25rem;
 }
 
 .description a:hover,

@@ -1,4 +1,6 @@
 import { GetServerSideProps, NextPage } from "next";
+import Link from "next/link";
+import Description from "../../components/Description";
 import Main from "../../components/Main";
 import Title from "../../components/Title";
 import { Employee as EmployeeType } from "../../server/routers/employee";
@@ -14,6 +16,11 @@ const Employee: NextPage<Props> = ({ id }) => {
   return (
     <Main>
       <Title>{employee.data ? employee.data.name : "Loading..."}</Title>
+
+      <Description>
+        <Link href="/">Home</Link>
+        <Link href="/employees">Employees</Link>
+      </Description>
 
       {employee.data ? (
         <ul>
