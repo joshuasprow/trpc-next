@@ -19,17 +19,19 @@ const getEmployees = async () => {
 };
 
 export const employeeRouter = router({
-  all: procedure.query(async () => {
+  findMany: procedure.query(async () => {
     const employees = await getEmployees();
 
     return employees;
   }),
-  one: procedure.input(Employee.pick({ id: true })).query(async ({ input }) => {
-    const employees = await getEmployees();
-    const employee = employees.find((employee) => employee.id === input.id);
+  find: procedure
+    .input(Employee.pick({ id: true }))
+    .query(async ({ input }) => {
+      const employees = await getEmployees();
+      const employee = employees.find((employee) => employee.id === input.id);
 
-    return employee || null;
-  }),
+      return employee || null;
+    }),
   create: procedure
     .input(Employee.omit({ id: true }))
     .mutation(async ({ input }) => {

@@ -10,7 +10,7 @@ import Title from "../../components/Title";
 import { trpc } from "../../utils/trpc";
 
 const Employees: NextPage = () => {
-  const employees = trpc.employee.all.useQuery();
+  const employees = trpc.employee.findMany.useQuery();
   const create = trpc.employee.create.useMutation();
 
   const [supervisor, setSupervisor] = useState<undefined | string>();

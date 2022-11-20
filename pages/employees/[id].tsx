@@ -8,7 +8,7 @@ import { trpc } from "../../utils/trpc";
 
 const Employee: NextPage = () => {
   const id = useRouter().query.id as string;
-  const employee = trpc.employee.one.useQuery({ id });
+  const employee = trpc.employee.find.useQuery({ id });
 
   return (
     <Main>
