@@ -1,16 +1,13 @@
-import { GetServerSideProps, NextPage } from "next";
+import { NextPage } from "next";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import Description from "../../components/Description";
 import Main from "../../components/Main";
 import Title from "../../components/Title";
-import { Employee as EmployeeType } from "../../server/routers/employee";
 import { trpc } from "../../utils/trpc";
 
-type Props = {
-  id: string;
-};
-
-const Employee: NextPage<Props> = ({ id }) => {
+const Employee: NextPage = () => {
+  const id = useRouter().query.id as string;
   const employee = trpc.employee.one.useQuery({ id });
 
   return (
@@ -31,20 +28,6 @@ const Employee: NextPage<Props> = ({ id }) => {
       ) : null}
     </Main>
   );
-};
-
-export const getServerSideProps: GetServerSideProps<Props> = async ({
-  params,
-}) => {
-  try {
-    const { id } = EmployeeType.pick({ id: true }).parse(params);
-
-    return { props: { id } };
-  } catch {
-    return {
-      redirect: { destination: "/employees", permanent: false },
-    };
-  }
 };
 
 export default Employee;
