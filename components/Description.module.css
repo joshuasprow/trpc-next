@@ -5,6 +5,10 @@
   text-align: center;
 }
 
+.description + .description {
+  margin-top: 0;
+}
+
 .description a {
   color: #0070f3;
   text-decoration: none;

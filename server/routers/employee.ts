@@ -34,14 +34,12 @@ export const employeeRouter = router({
     .input(Employee.omit({ id: true }))
     .mutation(async ({ input }) => {
       const employees = await getEmployees();
-      const id = faker.datatype.uuid();
+      const employee = { ...input, id: faker.datatype.uuid() };
 
-      employees.push({ ...input, id });
+      employees.push(employee);
 
-      const path = join("tmp", "employees.json");
+      await writeFile(join("tmp", "employees.json"), JSON.stringify(employees));
 
-      console.log(path);
-
-      await writeFile(path, JSON.stringify(employees));
+      return employee;
     }),
 });

@@ -1,6 +1,7 @@
 import { faker } from "@faker-js/faker";
 import { NextPage } from "next";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import Card from "../../components/Card";
 import Description from "../../components/Description";
 import Grid from "../../components/Grid";
@@ -12,23 +13,55 @@ const Employees: NextPage = () => {
   const employees = trpc.employee.all.useQuery();
   const create = trpc.employee.create.useMutation();
 
+  const [supervisor, setSupervisor] = useState<undefined | string>();
+
+  const handleSupervisorChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setSupervisor(e.target.value);
+  };
+
+  const handleCreate = async () => {
+    if (!supervisor) {
+      console.error("No supervisor selected");
+      return;
+    }
+
+    await create.mutateAsync({
+      name: faker.name.fullName(),
+      title: faker.name.jobTitle(),
+      supervisor,
+    });
+
+    await employees.refetch();
+  };
+
+  useEffect(() => {
+    let loaded = false;
+
+    if (loaded === false && employees.data) {
+      loaded = true;
+
+      setSupervisor(employees.data[0].name);
+    }
+  }, [employees.data]);
+
   return (
     <Main>
       <Title>Employees</Title>
 
       <Description>
         <Link href="/">Home</Link>
-        <button
-          onClick={() =>
-            create.mutate({
-              name: faker.name.fullName(),
-              supervisor: faker.name.fullName(),
-              title: faker.name.jobTitle(),
-            })
-          }
-        >
-          +
-        </button>
+      </Description>
+
+      <Description>
+        <select onChange={handleSupervisorChange} value={supervisor}>
+          {employees.data?.map((employee) => (
+            <option key={employee.id} value={employee.name}>
+              {employee.name} ({employee.title})
+            </option>
+          ))}
+        </select>
+
+        <button onClick={handleCreate}>+</button>
       </Description>
 
       <Grid>
