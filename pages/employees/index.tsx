@@ -1,3 +1,4 @@
+import { faker } from "@faker-js/faker";
 import { NextPage } from "next";
 import Link from "next/link";
 import Card from "../../components/Card";
@@ -9,6 +10,7 @@ import { trpc } from "../../utils/trpc";
 
 const Employees: NextPage = () => {
   const employees = trpc.employee.all.useQuery();
+  const create = trpc.employee.create.useMutation();
 
   return (
     <Main>
@@ -16,6 +18,17 @@ const Employees: NextPage = () => {
 
       <Description>
         <Link href="/">Home</Link>
+        <button
+          onClick={() =>
+            create.mutate({
+              name: faker.name.fullName(),
+              supervisor: faker.name.fullName(),
+              title: faker.name.jobTitle(),
+            })
+          }
+        >
+          +
+        </button>
       </Description>
 
       <Grid>
