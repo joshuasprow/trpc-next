@@ -9,6 +9,7 @@ export const Employee = z.object({
   name: z.string(),
   title: z.string(),
   supervisor: z.string(),
+  imageUrl: z.string().url(),
 });
 export type Employee = z.infer<typeof Employee>;
 

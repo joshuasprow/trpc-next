@@ -29,6 +29,7 @@ const Employees: NextPage = () => {
       name: faker.name.fullName(),
       title: faker.name.jobTitle(),
       supervisor,
+      imageUrl: faker.image.avatar(),
     });
 
     await employees.refetch();
@@ -69,6 +70,7 @@ const Employees: NextPage = () => {
           <Card
             description={employee.title}
             href={`/employees/${employee.id}`}
+            imageUrl={employee.imageUrl}
             title={employee.name}
             key={employee.id}
           />
